@@ -98,17 +98,23 @@ a:focus {
 #menu,
 #team,
 #gallery,
-#contact {
+#contact,
+#register,
+#login {
   color: #656565;
   padding-top: 100px;
   padding-bottom: 100px;
 }
 
+#about,
 #feature,
 #video,
+#menu,
 #team,
 #gallery,
-#contact {
+#contact,
+#register,
+#login {
   text-align: center;
 }
 
@@ -130,8 +136,12 @@ a:focus {
 #contact .section-title {
   color: #f0f0f0;
 }
-
-
+#register .section-title {
+  color: #f0f0f0;
+}
+#login .section-title {
+  color: #f0f0f0;
+}
 
 /* Preloader section  */
 .preloader {
@@ -591,10 +601,114 @@ a:focus {
     display: block;
 }
 
+/* Register section  */
+#register {
+  background: url('../images/contact-bg.jpg') 50% 0 repeat-y fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+#register .overlay {
+  background: rgba(0,0,0,0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+#register .form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #666;
+  border-radius: 0px;
+  box-shadow: none;
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 16px;
+  transition: all 0.4s ease-in-out;
+}
+
+#register .form-control:hover {
+  border-color: #ddd;
+}
+
+#register input {height: 45px;}
+
+#register input[type='submit'] {
+  background: #ffffff;
+  border-radius: 4px;
+  color: #c21500;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  height: 50px;
+  margin-top: 20px;
+  transition: all 0.4s ease-in-out;
+}
+#register input[type='submit']:hover {
+  background-color: #c21500;
+  border-color: transparent;
+  color: #ffffff;
+}
+
+/* Login section  */
+#login {
+  background: url('../images/contact-bg.jpg') 50% 0 repeat-y fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+#login .overlay {
+  background: rgba(0,0,0,0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+#login .form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #666;
+  border-radius: 0px;
+  box-shadow: none;
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 16px;
+  transition: all 0.4s ease-in-out;
+}
+
+#login .form-control:hover {
+  border-color: #ddd;
+}
+
+#login input {height: 45px;}
+
+#login input[type='submit'] {
+  background: #ffffff;
+  border-radius: 4px;
+  color: #c21500;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  height: 50px;
+  margin-top: 20px;
+  transition: all 0.4s ease-in-out;
+}
+#login input[type='submit']:hover {
+  background-color: #c21500;
+  border-color: transparent;
+  color: #ffffff;
+}
+
 
 /* Contact section  */
 #contact {
-  background: url('../images/contact-bg.jpg') 50% 0 repeat-y fixed;
+  background: url('../images/2.jpg') 50% 0 repeat-y fixed;
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center center;
@@ -803,7 +917,9 @@ footer strong {
   #menu,
   #team,
   #gallery,
-  #contact {
+  #contact,
+  #register,
+  #login {
     padding-top: 80px;
     padding-bottom: 80px;
   }

@@ -48,7 +48,7 @@
 						<input name="email" type="email" class="form-control" placeholder="Your Email" required>
 						<input name="password" type="password" class="form-control" placeholder="Your Password" required>
 						<input name="number" type="tel" class="form-control" placeholder="Your Phone" required>
-						<input type="submit" class="form-control submit" value="REGISTER">
+						<input type="submit" class="form-control submit" name="REGISTER" value="Register">
 						<input type="button" value="Go Back" class="form-control submit" onclick="history.back(-1)">
 					</form>
 				</div>
@@ -130,7 +130,39 @@
 <script src="js/custom.js"></script>
 </body>
 </html>
+
+
 <?php
-  $url = htmlspecialchars($_SERVER['HTTP_REFERER']);
+if(isset($_POST['Register'])){
+	
+	$name=$_POST["name"];
+	
+	$hp=$_POST["hp"];
+	$email=$_POST["email"];
+	$password=$_POST["password"];
+	$conpassword=$_POST["conpassword"];
+	
+		include "inc.koneksi.php";
+		
+		$sqlcek = "SELECT  `Email` FROM `tbl_member` WHERE Email='$email'";
+		
+		
+		$cekEmail = mysql_query ($sqlcek) or die (mysql_error());
+		
+		
+		if (mysql_num_rows ($cekEmail)==1){
+		echo "<script> alert ('Maaf Email yang anda masukkan sudah terdaftar'); </script>";	
+		}
+		else{		
+		$sql = "INSERT INTO `tbl_member`(`Name`, `PhoneNumber`, `Email`, `Password`, `ConfirmPassword`,`Role`) 
+				VALUES ('$name',$hp,'$email','$password','$conpassword','Member')";
+				
+				echo $sql;
+		
+		$result = mysql_query($sql) or die (mysql_error());
+		$subject = "Pendaftaran Sukses";
+		$message = "Selamat <b>$name</b> berhasil mendaftar sebagai peserta";
+		
+}
+}		
 ?>
-  <a href="<?=$url?>">Go Back</a>
